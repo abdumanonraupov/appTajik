@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screen_glav">
+    tools:context=".Screen_glav"
+    android:background="@drawable/bgscreen">
+    <TextView
+        android:id="@+id/text_wel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Хуш омадед!"
+        android:textSize="25dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="35dp"
+        android:textColor="#BF7BCC"/>
+    <TextView
+        android:id="@+id/text_wel_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textSize="20dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="-150dp"
+        android:textColor="#707181"/>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
