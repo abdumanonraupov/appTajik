@@ -21,7 +21,7 @@ public class Screen_glav extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent home = new Intent(Screen_glav.this, MainActivity.class);
+                Intent home = new Intent(Screen_glav.this, menu_app.class);
                 startActivity(home);
                 finish();
             }

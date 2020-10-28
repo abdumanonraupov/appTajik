@@ -3,6 +3,7 @@ package com.abdumanon_english.tajik.question;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -23,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private String[] keys = {"R", "I", "B", "D", "X"};
     private String textAnswer = "BIRD";
     TextView textScreen, textQuestion, textTitle;
-    Animation smallbigforth;
+    Animation smallbigforth , smalltobig;;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         smallbigforth = AnimationUtils.loadAnimation(this, R.anim.smallbigforth);
 
@@ -84,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
         textTitle.setTypeface(typeface);
         editText.setTypeface(typeface);
         textView.setTypeface(typeface);
+        //sssssssssssssssssssssssssssssssssssssssoooooooounnnnnnnddddd
+        final MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.button);
 
+        //sssssssssssssssssssssooooooooooooooooonnnnnnnnnnnnnddddddddddddd
         textView.setOnClickListener(new View.OnClickListener() {
 
             @SuppressLint("SetTextI18n")
@@ -94,7 +102,13 @@ public class MainActivity extends AppCompatActivity {
                     if (presCounter == 0)
                         editText.setText("");
 
-                        editText.setText(editText.getText().toString() + text);
+
+                    //start
+
+                    mediaPlayer.start();
+                    //start
+
+                    editText.setText(editText.getText().toString() + text);
                         textView.startAnimation(smallbigforth);
                         textView.animate().alpha(0).setDuration(300);
                         presCounter++;
@@ -121,13 +135,16 @@ public class MainActivity extends AppCompatActivity {
         if(editText.getText().toString().equals(textAnswer)) {
 //            Toast.makeText(MainActivity.this, "Correct", Toast.LENGTH_SHORT).show();
 
-            Intent a = new Intent(MainActivity.this,BossAct.class);
+            Intent a = new Intent(MainActivity.this,up.class);
             startActivity(a);
-
+            final MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.corect);
+            mediaPlayer.start();
             editText.setText("");
         } else {
             Toast.makeText(MainActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             editText.setText("");
+            final MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.oshibkaoo);
+            mediaPlayer.start();
         }
 
         keys = shuffleArray(keys);

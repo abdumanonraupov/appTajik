@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menu_app">
+        <activity android:name=".up"></activity>
+        <activity android:name=".menu_app" />
+        <activity android:name=".Screen_glav">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".Screen_glav" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BossAct">
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BossAct"></activity>
     </application>
 
 </manifest>
